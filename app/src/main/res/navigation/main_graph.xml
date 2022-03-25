@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/rates"
-        android:name="com.example.loftcoin.ui.rates.RatesFragments"
+        android:name="com.example.loftcoin.ui.rates.RatesFragment"
         android:label="@string/rates"
         tools:layout="@layout/fragment_rates" />
 
@@ -23,6 +23,13 @@
         android:label="@string/converter"
         tools:layout="@layout/fragment_converter" />
 
+    <dialog
+        android:id="@+id/currency_dialog"
+        android:name="com.example.loftcoin.ui.currency.CurrencyDialog"
+        android:label="CurrencyDialog"
+        tools:layout="@layout/dialog_currency" />
 
-<fragment android:id="@+id/placeholder"/>
+
+
+    <fragment android:id="@+id/placeholder"/>
 </navigation>

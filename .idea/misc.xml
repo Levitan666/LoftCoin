@@ -11,19 +11,24 @@
         <entry key="..\:/Users/Shark Sharp/AndroidStudioProjects/LoftCoin/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.15" />
         <entry key="..\:/Users/Shark Sharp/AndroidStudioProjects/LoftCoin/app/src/main/res/drawable/ic_bg_wallet_card_foreground.xml" value="0.174" />
         <entry key="..\:/Users/Shark Sharp/AndroidStudioProjects/LoftCoin/app/src/main/res/drawable/ic_converter_24dp.xml" value="0.174" />
+        <entry key="..\:/Users/Shark Sharp/AndroidStudioProjects/LoftCoin/app/src/main/res/drawable/ic_currency_24dp.xml" value="0.1735" />
         <entry key="..\:/Users/Shark Sharp/AndroidStudioProjects/LoftCoin/app/src/main/res/drawable/ic_rates_24dp.xml" value="0.174" />
+        <entry key="..\:/Users/Shark Sharp/AndroidStudioProjects/LoftCoin/app/src/main/res/drawable/ic_sort_24dp.xml" value="0.1735" />
         <entry key="..\:/Users/Shark Sharp/AndroidStudioProjects/LoftCoin/app/src/main/res/drawable/ic_wallet_24dp.xml" value="0.174" />
         <entry key="..\:/Users/Shark Sharp/AndroidStudioProjects/LoftCoin/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Shark Sharp/AndroidStudioProjects/LoftCoin/app/src/main/res/layout/activity_splash.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Shark Sharp/AndroidStudioProjects/LoftCoin/app/src/main/res/layout/activity_welcome.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Shark Sharp/AndroidStudioProjects/LoftCoin/app/src/main/res/layout/dialog_currency.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Shark Sharp/AndroidStudioProjects/LoftCoin/app/src/main/res/layout/fragment_converter.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Shark Sharp/AndroidStudioProjects/LoftCoin/app/src/main/res/layout/fragment_rates.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Shark Sharp/AndroidStudioProjects/LoftCoin/app/src/main/res/layout/fragment_wallets.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Shark Sharp/AndroidStudioProjects/LoftCoin/app/src/main/res/layout/li_currency.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Shark Sharp/AndroidStudioProjects/LoftCoin/app/src/main/res/layout/li_rate.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Shark Sharp/AndroidStudioProjects/LoftCoin/app/src/main/res/layout/li_transaction.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Shark Sharp/AndroidStudioProjects/LoftCoin/app/src/main/res/layout/li_wallet.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Shark Sharp/AndroidStudioProjects/LoftCoin/app/src/main/res/layout/welcome_page.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Shark Sharp/AndroidStudioProjects/LoftCoin/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Shark Sharp/AndroidStudioProjects/LoftCoin/app/src/main/res/menu/rates.xml" value="0.19342053111375346" />
         <entry key="..\:/Users/Shark Sharp/AndroidStudioProjects/LoftCoin/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.124" />
         <entry key="..\:/Users/Shark Sharp/AndroidStudioProjects/LoftCoin/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
       </map>
