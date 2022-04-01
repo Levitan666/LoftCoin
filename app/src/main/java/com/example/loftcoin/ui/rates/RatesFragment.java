@@ -14,15 +14,21 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.example.loftcoin.BaseComponent;
 import com.example.loftcoin.R;
 import com.example.loftcoin.data.CurrencyRepo;
 import com.example.loftcoin.data.CurrencyRepoImpl;
 import com.example.loftcoin.databinding.FragmentRatesBinding;
 import com.example.loftcoin.util.PriceFormatter;
 
+import javax.inject.Inject;
+
 import timber.log.Timber;
 
+
 public class RatesFragment extends Fragment {
+
+    private final RatesComponent component;
 
     private FragmentRatesBinding binding;
 
@@ -30,14 +36,19 @@ public class RatesFragment extends Fragment {
 
     private RatesViewModel viewModel;
 
-    private CurrencyRepo currencyRepo;
+    @Inject
+    public RatesFragment(BaseComponent baseComponent) {
+        component = DaggerRatesComponent.builder()
+                .baseComponent(baseComponent)
+                .build();
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        viewModel = new ViewModelProvider(this).get(RatesViewModel.class);
-        adapter = new RatesAdapter(new PriceFormatter());
-        currencyRepo = new CurrencyRepoImpl(requireContext());
+        viewModel = new ViewModelProvider(this, component.viewModelFactory())
+                .get(RatesViewModel.class);
+        adapter = component.ratesAdapter();
     }
 
     @Nullable
@@ -52,13 +63,11 @@ public class RatesFragment extends Fragment {
         setHasOptionsMenu(true);
         binding = FragmentRatesBinding.bind(view);
         binding.recycler.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        binding.recycler.swapAdapter(adapter, false);
+        binding.recycler.setAdapter(adapter);
         binding.recycler.setHasFixedSize(true);
+        binding.refresher.setOnRefreshListener(viewModel::refresh);
         viewModel.coins().observe(getViewLifecycleOwner(), adapter::submitList);
         viewModel.isRefreshing().observe(getViewLifecycleOwner(), binding.refresher::setRefreshing);
-        currencyRepo.currency().observe(getViewLifecycleOwner(), (currency) -> {
-            Timber.d("%s", currency);
-        });
     }
 
     @Override
@@ -74,13 +83,16 @@ public class RatesFragment extends Fragment {
                     .findNavController(this)
                     .navigate(R.id.currency_dialog);
             return true;
+        } else if (R.id.sort_dialog == item.getItemId()) {
+            viewModel.switchSortingOrder();
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
     @Override
     public void onDestroyView() {
-        binding.recycler.swapAdapter(null, false);
+        binding.recycler.setAdapter(null);
         super.onDestroyView();
     }
 

@@ -3,6 +3,7 @@ package com.example.loftcoin.ui.rates;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Outline;
+import android.os.Build;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,14 +11,16 @@ import android.view.ViewGroup;
 import android.view.ViewOutlineProvider;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.loftcoin.BuildConfig;
 import com.example.loftcoin.R;
 import com.example.loftcoin.data.Coin;
 import com.example.loftcoin.databinding.LiRateBinding;
 import com.example.loftcoin.util.PriceFormatter;
-import com.squareup.picasso.BuildConfig;
 import com.squareup.picasso.Picasso;
 import java.util.Locale;
 import java.util.Objects;
@@ -59,6 +62,7 @@ class RatesAdapter extends ListAdapter<Coin, RatesAdapter.ViewHolder> {
         return new ViewHolder(LiRateBinding.inflate(inflater, parent, false));
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final Coin coin = getItem(position);
